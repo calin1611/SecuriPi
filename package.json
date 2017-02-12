@@ -1,0 +1,25 @@
+{
+  "name": "securipi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "httpdispatcher": "^1.0.0",
+    "firebase": "^3.4.1",
+    "nodemailer": "^2.6.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calin1611/SecuriPi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calin1611/SecuriPi/issues"
+  },
+  "homepage": "https://github.com/calin1611/SecuriPi#readme"
+}

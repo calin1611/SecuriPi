@@ -1,16 +1,20 @@
 from gpiozero import Button
 import requests
+import threading
 
 button = Button(21)
-makeCall = False
-while True:
+
+madeCall = False
+def checkDoor():
+    global madeCall
+    threading.Timer(1.0, checkDoor).start()
     if button.is_pressed:
-        makeCall = False;
-        print('door closed')
+        madeCall = False;    
     else:
-        if makeCall == True:
+        if madeCall == True:
             print("Door OPEN +++++++++++++++++++++++++")
         else:
-            print('make the call>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
-            r = requests.get('http://localhost:8080/page1')
-            makeCall = True
+            print('made the call>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+            r = requests.get('http://localhost:8080/door-opened')
+            madeCall = True
+checkDoor()
